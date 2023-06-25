@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Hive Fun Creative</title>
   <meta content="" name="description">
@@ -27,9 +28,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- Add the necessary CSS and meta tags -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add CSS stylesheets -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
+
 </head>
 
 <body>
@@ -135,67 +136,68 @@
       </div>
     </section><!-- End About Section -->
 
-<!-- ======= Facts Section ======= -->
+<!-- ======= Counter Section ======= -->
 <section id="facts" class="facts">
   <div class="container" data-aos="fade-up">
     <div class="row">
-
       <div class="col-lg-3 col-md-6">
         <div class="count-box">
           <i class='bx bx-user' ></i>
-          <span data-purecounter-start="0" data-purecounter-end="31 " data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="31" data-purecounter-duration="1" class="purecounter">0</span>
           <p>Clients</p>
         </div>
       </div>
-
       <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
         <div class="count-box">
-          <i class="bi bi-journal-richtext"></i>
-          <span data-purecounter-start="0" data-purecounter-end="47 " data-purecounter-duration="1" class="purecounter"></span>
+          <i class='bx bx-cog'></i>
+          <span data-purecounter-start="0" data-purecounter-end="47" data-purecounter-duration="1" class="purecounter">0</span>
           <p>Service Handled</p>
         </div>
       </div>
-
       <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
         <div class="count-box">
           <i class='bx bx-briefcase' ></i>
-          <span data-purecounter-start="0" data-purecounter-end="13 " data-purecounter-duration="1" class="purecounter"></span>
-          <p>Partnership</p>
+          <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter">0</span>
+          <p>Years Of Support</p>
         </div>
       </div>
-
       <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
         <div class="count-box">
           <i class='bx bxs-package'></i>
-          <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+          <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter">0</span>
           <p>Total Product Solutions</p>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- Add the necessary JavaScript libraries -->
+<!-- Add JavaScript libraries -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js"></script>
 <script>
   // Initialize and start the PureCounter plugin
   $(document).ready(function() {
     $('.purecounter').each(function() {
       var endValue = parseInt($(this).attr('data-purecounter-end'));
-      $(this).prop('Counter', 0).animate({
-        Counter: endValue
-      }, {
-        duration: parseInt($(this).attr('data-purecounter-duration')) * 1000,
-        easing: 'swing',
-        step: function(now) {
-          $(this).text(Math.ceil(now));
+      var duration = 1; // Duration in seconds
+      var incrementsPerSecond = 60; // Number of increments per second
+      var range = endValue / (duration * incrementsPerSecond);
+      var currentCount = 0;
+      var counterElement = $(this);
+
+      setInterval(function() {
+        if (currentCount < endValue) {
+          currentCount += range;
+          counterElement.text(Math.round(currentCount));
+        } else {
+          counterElement.text(endValue);
         }
-      });
+      }, 1000 / incrementsPerSecond);
     });
   });
-</script><!-- End Facts Section -->
+</script>
+<!-- End Counter Section -->
 
     <!-- ======= Features Section ======= -->
    <section id="features" class="features" data-aos="fade-up">
@@ -330,7 +332,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Portfolio</h2>
+          <h2>Client</h2>
           <p>I am eager to share my portfolio, which showcases a collection of my past works and achievements. It serves as a testament to my skills, creativity, and dedication in delivering high-quality results.</p>
         </div>
 
