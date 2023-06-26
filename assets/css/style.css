@@ -8,12 +8,12 @@ body {
 }
 
 a {
-  color: #f5d443;
+  color: #ee7509;
   text-decoration: none;
 }
 
 a:hover {
-  color: #f5d859;
+  color: #6272f9;
   text-decoration: none;
 }
 
@@ -614,8 +614,6 @@ section {
 .facts .count-box:hover p {
   color: #fff;
 }
-
-
 
 /*--------------------------------------------------------------
 # Features
@@ -1278,6 +1276,20 @@ section {
     transform: rotate(360deg);
   }
 }
+
+.hover-effect {
+  background: #ee7509;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.hover-effect:hover {
+  background: #00c53b;
+}
+
 
 /*--------------------------------------------------------------
 # Breadcrumbs
